@@ -33,7 +33,22 @@ export default {
           console.log("error", error);
         })
         .finally(() => {
+          console.log("terminata chiamata film");
+        })
+      //SERIE
+      axios
+        .get(this.store.apiSeriesUrl, {
+          params: this.store.element
+        })
+        .then((resp) => {
+          this.store.series = resp.data.results;
+        })
+        .catch((error) => {
+          console.log("error", error);
+        })
+        .finally(() => {
           this.store.loading = false;
+          console.log("terminata chiamata serie tv");
         })
     }
   }

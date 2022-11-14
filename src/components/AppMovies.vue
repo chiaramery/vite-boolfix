@@ -19,9 +19,9 @@ export default {
 
 <template>
     <div class="list-movies">
-        <h2>Film</h2>
         <div class="row">
             <ul>
+                <h2>Film</h2>
                 <li v-for="film in store.movies" :key="film.id">
                     <AppCardMovie :film="film" />
                 </li>
@@ -30,10 +30,12 @@ export default {
     </div>
 
     <div class="list-series">
-        <h2>Series</h2>
         <div class="row">
             <ul>
-                <li v-for="serie in store.series" :key="series.id"></li>
+                <h2>Series</h2>
+                <li v-for="serie in store.series" :key="serie.id">
+                    <AppCardSeries :serie="serie" />
+                </li>
             </ul>
         </div>
     </div>
