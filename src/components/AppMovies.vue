@@ -1,10 +1,12 @@
 <script>
 import { store } from "../store";
 import AppCardMovie from "./AppCardMovie.vue";
+import AppCardSeries from "./AppCardSeries.vue";
 export default {
     name: 'AppMovies',
     components: {
         AppCardMovie,
+        AppCardSeries,
     },
     data() {
         return {
@@ -24,7 +26,15 @@ export default {
                     <AppCardMovie :film="film" />
                 </li>
             </ul>
+        </div>
+    </div>
 
+    <div class="list-series">
+        <h2>Series</h2>
+        <div class="row">
+            <ul>
+                <li v-for="serie in store.series" :key="series.id"></li>
+            </ul>
         </div>
     </div>
 </template>

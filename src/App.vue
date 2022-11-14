@@ -22,19 +22,17 @@ export default {
       this.store.loading = true;
       console.log("prova fuori axios");
       //FILM
-      // console.log(this.store.apiMoviesUrl, "apiMoviesUrl");
-      // console.log(this.store.myApiKey, "apiKey");
       axios
         .get(this.store.apiMoviesUrl, {
-          params: {
-            api_key: this.store.myApiKey,
-          }
-        }).then((resp) => {
+          params: this.store.element
+        })
+        .then((resp) => {
           this.store.movies = resp.data.results;
-          console.log("prova dentro then");
-        }).catch((error) => {
+        })
+        .catch((error) => {
           console.log("error", error);
-        }).finally(() => {
+        })
+        .finally(() => {
           this.store.loading = false;
         })
     }

@@ -17,7 +17,7 @@ export default {
                 <h1>BOOLFIX</h1>
             </div>
             <div class="user-input d-flex">
-                <input type="text" class="form-control" v-model="this.store.searchKey">
+                <input type="text" class="form-control" v-model="this.store.element.query">
                 <button class="btn btn-danger" @click="$emit('movieSearch')">Search</button>
             </div>
         </div>
