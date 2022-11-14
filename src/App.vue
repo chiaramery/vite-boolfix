@@ -20,18 +20,21 @@ export default {
   methods: {
     getMovies() {
       this.store.loading = true;
+      console.log("prova fuori axios");
       //FILM
+      // console.log(this.store.apiMoviesUrl, "apiMoviesUrl");
+      // console.log(this.store.myApiKey, "apiKey");
       axios
         .get(this.store.apiMoviesUrl, {
-          params: this.store.myApiKey
-        })
-        .then((resp) => {
+          params: {
+            api_key: this.store.myApiKey,
+          }
+        }).then((resp) => {
           this.store.movies = resp.data.results;
-        })
-        .catch((error) => {
-          console.log("Error", error);
-        })
-        .finally(() => {
+          console.log("prova dentro then");
+        }).catch((error) => {
+          console.log("error", error);
+        }).finally(() => {
           this.store.loading = false;
         })
     }
