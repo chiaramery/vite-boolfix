@@ -14,12 +14,15 @@ export default {
 
 <template>
     <div class="card-movies">
+        <div class="card-image">
+            <img :src="`https://image.tmdb.org/t/p/w342/${film.poster_path}`" alt="">
+        </div>
         <h2>Titolo: {{ film.title }}</h2>
         <h3>Titolo originale: {{ film.original_title }}</h3>
         <p>Lingua: {{ film.original_language }}
             <img :src="getImgFlag(`../assets/img/${film.original_language}.png`)" alt="">
         </p>
-        <p>Voto: {{ film.vote_count }}</p>
+        <p>Voto: {{ film.vote_average }}</p>
     </div>
 </template>
 
