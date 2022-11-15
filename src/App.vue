@@ -34,7 +34,9 @@ export default {
         })
         .finally(() => {
           console.log("terminata chiamata film");
+          this.store.loading = false;
         })
+
       //SERIE
       axios
         .get(this.store.apiSeriesUrl, {
@@ -50,7 +52,7 @@ export default {
           this.store.loading = false;
           console.log("terminata chiamata serie tv");
         })
-    }
+    },
   }
 }
 

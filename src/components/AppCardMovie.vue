@@ -1,4 +1,6 @@
 <script>
+
+
 export default {
     name: 'AppCardMovie',
     props: {
@@ -8,10 +10,12 @@ export default {
         getImgFlag(imgFlag) {
             return new URL(imgFlag, import.meta.url).href;
         },
+        getStars(vote) {
+            return Math.ceil(vote);
+        }
     }
 }
 </script>
-
 <template>
     <div class="card-movies">
         <div class="card-image">
@@ -22,10 +26,13 @@ export default {
         <p>Lingua: {{ film.original_language }}
             <img :src="getImgFlag(`../assets/img/${film.original_language}.png`)" alt="">
         </p>
-        <p>Voto: {{ film.vote_average }}</p>
+        <p>Voto:
+            <span v-for="number in 5" :key="number">
+                <i class="fa-solid fa-star" v-if="getStars(film.vote_average / 2) >= number"></i>
+            </span>
+        </p>
     </div>
 </template>
-
 <style lang="scss" scoped>
 .card-movies {
     p {
@@ -33,5 +40,6 @@ export default {
             width: 2%;
         }
     }
+
 }
 </style>

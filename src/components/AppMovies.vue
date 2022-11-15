@@ -20,23 +20,15 @@ export default {
 <template>
     <div class="list-movies">
         <div class="row">
-            <ul>
-                <h2>Film</h2>
-                <li v-for="film in store.movies" :key="film.id">
-                    <AppCardMovie :film="film" />
-                </li>
-            </ul>
+            <h2>Film</h2>
+            <AppCardMovie :film="film" v-for="film in store.movies" :key="film.id" />
         </div>
     </div>
 
     <div class="list-series">
         <div class="row">
-            <ul>
-                <h2>Series</h2>
-                <li v-for="serie in store.series" :key="serie.id">
-                    <AppCardSeries :serie="serie" />
-                </li>
-            </ul>
+            <h2>Series</h2>
+            <AppCardSeries :serie="serie" v-for="serie in store.series" :key="serie.id" />
         </div>
     </div>
 </template>

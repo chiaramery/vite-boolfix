@@ -8,7 +8,7 @@ export const store = reactive({
     // ELEMENT SEARCH
     element: {
         language: "it-IT",
-        query: "",
+        query: " ",
         api_key: "560c871a13ba72571f152bde705e44e9",
     },
     // LOADING
