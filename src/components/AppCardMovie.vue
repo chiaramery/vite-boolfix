@@ -17,11 +17,11 @@ export default {
 }
 </script>
 <template>
-    <div class="card-movies g-2">
+    <div class="card-movies g-3">
         <div class="card-image">
             <img :src="`https://image.tmdb.org/t/p/w342/${film.poster_path}`" alt="">
         </div>
-        <div class="card-text d-none">
+        <div class="card-text">
             <h2>Titolo: {{ film.title }}</h2>
             <h3>Titolo originale: {{ film.original_title }}</h3>
             <p>Lingua: {{ film.original_language }}
@@ -39,16 +39,34 @@ export default {
 .card-movies {
     cursor: pointer;
     width: calc(100% / 3);
+    position: relative;
 
-    &:hover {
-        border: 1px solid black;
+    .card-image {
+        text-align: center;
+
+        &:hover {
+            display: none;
+        }
+
     }
 
+
     .card-text {
+        font-size: .8em;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+
+        &:hover {
+            display: block;
+        }
 
         p {
             img {
                 width: 5%;
+                object-fit: cover;
             }
         }
 

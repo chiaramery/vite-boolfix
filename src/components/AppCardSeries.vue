@@ -37,6 +37,7 @@ export default {
     p {
         img {
             width: 5%;
+            object-fit: cover;
         }
     }
 }
