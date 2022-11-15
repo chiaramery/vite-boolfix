@@ -33,9 +33,10 @@ export default {
 </template>
 <style lang="scss" scoped>
 .card-series {
+
     p {
         img {
-            width: 2%;
+            width: 5%;
         }
     }
 }

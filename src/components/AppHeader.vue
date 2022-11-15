@@ -26,11 +26,26 @@ export default {
 
 <style lang="scss" scoped>
 header {
-    background-color: gray;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
 
-    .user-input {
-        height: 10%;
-        width: 20%;
+    .wrapper-header {
+        width: 98%;
+        margin: 0 auto;
+        padding: .5em;
+
+        .title {
+            color: red;
+        }
+
+        .user-input {
+            height: 10%;
+            width: 20%;
+        }
+
     }
 }
 </style>
