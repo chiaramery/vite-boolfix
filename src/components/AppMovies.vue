@@ -39,9 +39,20 @@ export default {
 
 <style lang="scss" scoped>
 .main-container {
-    width: 90%;
-    margin: 5em auto;
+    width: 100%;
+    margin-top: 4.5em;
     height: 100vh;
+    overflow: scroll;
+    background-color: gray;
 
+    .list-movies {
+        width: 73%;
+        margin: 0 auto;
+    }
+
+    .list-series {
+        width: 73%;
+        margin: 0 auto;
+    }
 }
 </style>
